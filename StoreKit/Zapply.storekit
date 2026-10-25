@@ -1,0 +1,60 @@
+{
+  "identifier" : "5E1C7A42",
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "8C1F3A10",
+      "localizations" : [],
+      "name" : "Zapply Premium",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "29.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "8C1F3A11",
+          "introductoryOffer" : {
+            "internalID" : "8C1F3A13",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            { "description" : "Keyboard, channels and unlimited TVs", "displayName" : "Premium Yearly", "locale" : "en_US" }
+          ],
+          "productID" : "com.zapplyremote.app.premium.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Premium Yearly",
+          "subscriptionGroupID" : "8C1F3A10",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : []
+        },
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "8C1F3A12",
+          "localizations" : [
+            { "description" : "Keyboard, channels and unlimited TVs", "displayName" : "Premium Weekly", "locale" : "en_US" }
+          ],
+          "productID" : "com.zapplyremote.app.premium.weekly",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "Premium Weekly",
+          "subscriptionGroupID" : "8C1F3A10",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : []
+        }
+      ]
+    }
+  ],
+  "version" : { "major" : 4, "minor" : 0 }
+}

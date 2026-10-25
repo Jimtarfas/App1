@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03F92A835573A5E9A82A5A87 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B9A0F03E62679E064CEFDA /* AppRouter.swift */; };
+		07E2D3F9C8A7713C835F4CFE /* NetworkScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E490ED79F65A1A626854D47 /* NetworkScanner.swift */; };
+		0C49FD7EFDAFE96293B0EF99 /* TVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C7F9A38C859137605597AB /* TVController.swift */; };
+		1AAF27F56685A27D707254F4 /* SubscriptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD50497D86355E12143FA76 /* SubscriptionStore.swift */; };
+		1C0D9F2A2B327F6F2A70F426 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CCD47058A7E4A4F3A7DFD6 /* PaywallView.swift */; };
+		203107F7A7917DC6715B19CB /* DemoTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8C3833AB0F22928002A399 /* DemoTV.swift */; };
+		2D44E47DBCDBBF5935C3F7A6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F257227E4E8B9C636281A5F /* Theme.swift */; };
+		2FB7FD08052FE3C844C26349 /* TVManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02FBC35DCF93E8A63DCCA5 /* TVManager.swift */; };
+		3A3703D323FA0BDABDBC564F /* RemoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC29EE6E6CC8780A0F9483 /* RemoteView.swift */; };
+		4A632F96D0E771672A6192BE /* TVModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7F10E44000DEB71B2FFC9 /* TVModels.swift */; };
+		5F130AD81867634F5ACBD1DD /* RokuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBB3BFF3A20A1C129D59347 /* RokuController.swift */; };
+		623BDFFE028FEBA9692D8CA8 /* LGController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D01EDBDEF09E399F9DF5400 /* LGController.swift */; };
+		80FBDF25F40D6C6D03443597 /* RemoteSheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5EAEDD60D3D9611E64E3A6 /* RemoteSheets.swift */; };
+		822571748E003E9A1EE191D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEE79D7B0629C8C586923B0F /* Assets.xcassets */; };
+		868D1278497845EDEE7F0FA8 /* SamsungController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BF9883C9F6917822CA0D5D /* SamsungController.swift */; };
+		927206EC44FA077E92FACEDD /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5904115DC4F2DC1E2F8F0 /* DevicesView.swift */; };
+		A3F2A17776F287A0B508DE8D /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3851944DEE0F3CE66E80750 /* AppsView.swift */; };
+		A542CBCC3630DB3F80FF378F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED6C74ED58242E6DB1A810 /* OnboardingView.swift */; };
+		C3CFCEDF7FD48E69944EBA15 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB0F43D63EF6F58DE98BC7 /* RootView.swift */; };
+		C883E0BEA42235EA9CEE6036 /* RemoteControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315A52082BD5CB8C12559862 /* RemoteControls.swift */; };
+		CDABD40029150680A660306E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F0E3F020192B4B1BE2AA3E8D /* PrivacyInfo.xcprivacy */; };
+		EF1C8DFBD164EEB5BCD1FE9B /* ZapplyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F56C7C8DDA0E9875400A2 /* ZapplyApp.swift */; };
+		F7CA0818BAC00CE7597691C8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D4B7A9C64885E00193B05D /* SettingsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F8F56C7C8DDA0E9875400A2 /* ZapplyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZapplyApp.swift; sourceTree = "<group>"; };
+		13CCD47058A7E4A4F3A7DFD6 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		315A52082BD5CB8C12559862 /* RemoteControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteControls.swift; sourceTree = "<group>"; };
+		32B9A0F03E62679E064CEFDA /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		3D02FBC35DCF93E8A63DCCA5 /* TVManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVManager.swift; sourceTree = "<group>"; };
+		4AEB0F43D63EF6F58DE98BC7 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		5BBC29EE6E6CC8780A0F9483 /* RemoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteView.swift; sourceTree = "<group>"; };
+		5D01EDBDEF09E399F9DF5400 /* LGController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LGController.swift; sourceTree = "<group>"; };
+		63C7F9A38C859137605597AB /* TVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVController.swift; sourceTree = "<group>"; };
+		6E490ED79F65A1A626854D47 /* NetworkScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkScanner.swift; sourceTree = "<group>"; };
+		71BF9883C9F6917822CA0D5D /* SamsungController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamsungController.swift; sourceTree = "<group>"; };
+		7F257227E4E8B9C636281A5F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		85D4B7A9C64885E00193B05D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9BD50497D86355E12143FA76 /* SubscriptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStore.swift; sourceTree = "<group>"; };
+		B3851944DEE0F3CE66E80750 /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
+		B3A7F10E44000DEB71B2FFC9 /* TVModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVModels.swift; sourceTree = "<group>"; };
+		BB4C12DB4ABCC21C3A4F469A /* Zapply.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Zapply.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5EAEDD60D3D9611E64E3A6 /* RemoteSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSheets.swift; sourceTree = "<group>"; };
+		C2ED6C74ED58242E6DB1A810 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		DFBB3BFF3A20A1C129D59347 /* RokuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RokuController.swift; sourceTree = "<group>"; };
+		E8F5904115DC4F2DC1E2F8F0 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		EC55424AE34705C1EB55748C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EEE79D7B0629C8C586923B0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0E3F020192B4B1BE2AA3E8D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		FC8C3833AB0F22928002A399 /* DemoTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTV.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0BDE374685CAE1B5FEF2CCF5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EEE79D7B0629C8C586923B0F /* Assets.xcassets */,
+				F0E3F020192B4B1BE2AA3E8D /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		20ADB3744079E73B9781C2D6 = {
+			isa = PBXGroup;
+			children = (
+				B9985A7F08B3C0086610939C /* Zapply */,
+				40D55CBBD9809FD4153ACC89 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DD882EB4C23C96A8C12D28A /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				9BD50497D86355E12143FA76 /* SubscriptionStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		40D55CBBD9809FD4153ACC89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB4C12DB4ABCC21C3A4F469A /* Zapply.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F2A76E20505148111012263 /* TV */ = {
+			isa = PBXGroup;
+			children = (
+				FC8C3833AB0F22928002A399 /* DemoTV.swift */,
+				5D01EDBDEF09E399F9DF5400 /* LGController.swift */,
+				6E490ED79F65A1A626854D47 /* NetworkScanner.swift */,
+				DFBB3BFF3A20A1C129D59347 /* RokuController.swift */,
+				71BF9883C9F6917822CA0D5D /* SamsungController.swift */,
+				63C7F9A38C859137605597AB /* TVController.swift */,
+				3D02FBC35DCF93E8A63DCCA5 /* TVManager.swift */,
+				B3A7F10E44000DEB71B2FFC9 /* TVModels.swift */,
+			);
+			path = TV;
+			sourceTree = "<group>";
+		};
+		B9985A7F08B3C0086610939C /* Zapply */ = {
+			isa = PBXGroup;
+			children = (
+				EC55424AE34705C1EB55748C /* Info.plist */,
+				C5BFA1FACA8BB5F93D51F7BE /* App */,
+				0BDE374685CAE1B5FEF2CCF5 /* Resources */,
+				3DD882EB4C23C96A8C12D28A /* Store */,
+				8F2A76E20505148111012263 /* TV */,
+				F80557EAF9BF1FEB37C72E7C /* Views */,
+			);
+			path = Zapply;
+			sourceTree = "<group>";
+		};
+		C5BFA1FACA8BB5F93D51F7BE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				32B9A0F03E62679E064CEFDA /* AppRouter.swift */,
+				7F257227E4E8B9C636281A5F /* Theme.swift */,
+				0F8F56C7C8DDA0E9875400A2 /* ZapplyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F80557EAF9BF1FEB37C72E7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3851944DEE0F3CE66E80750 /* AppsView.swift */,
+				E8F5904115DC4F2DC1E2F8F0 /* DevicesView.swift */,
+				C2ED6C74ED58242E6DB1A810 /* OnboardingView.swift */,
+				13CCD47058A7E4A4F3A7DFD6 /* PaywallView.swift */,
+				315A52082BD5CB8C12559862 /* RemoteControls.swift */,
+				BF5EAEDD60D3D9611E64E3A6 /* RemoteSheets.swift */,
+				5BBC29EE6E6CC8780A0F9483 /* RemoteView.swift */,
+				4AEB0F43D63EF6F58DE98BC7 /* RootView.swift */,
+				85D4B7A9C64885E00193B05D /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		23E761D2D9F3BC3DBD7E38FC /* Zapply */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 507A2B3C09F5FD5668FE471C /* Build configuration list for PBXNativeTarget "Zapply" */;
+			buildPhases = (
+				60F8FA16037BAA85331A19BE /* Sources */,
+				D197541C0923E6F9C0070C45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zapply;
+			packageProductDependencies = (
+			);
+			productName = Zapply;
+			productReference = BB4C12DB4ABCC21C3A4F469A /* Zapply.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F72BC4BA679AAFFA499C284 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					23E761D2D9F3BC3DBD7E38FC = {
+						DevelopmentTeam = ZUCC9R4PP4;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7DEA8333722D32513A01FDC1 /* Build configuration list for PBXProject "Zapply" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 20ADB3744079E73B9781C2D6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 40D55CBBD9809FD4153ACC89 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				23E761D2D9F3BC3DBD7E38FC /* Zapply */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D197541C0923E6F9C0070C45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				822571748E003E9A1EE191D7 /* Assets.xcassets in Resources */,
+				CDABD40029150680A660306E /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		60F8FA16037BAA85331A19BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03F92A835573A5E9A82A5A87 /* AppRouter.swift in Sources */,
+				A3F2A17776F287A0B508DE8D /* AppsView.swift in Sources */,
+				203107F7A7917DC6715B19CB /* DemoTV.swift in Sources */,
+				927206EC44FA077E92FACEDD /* DevicesView.swift in Sources */,
+				623BDFFE028FEBA9692D8CA8 /* LGController.swift in Sources */,
+				07E2D3F9C8A7713C835F4CFE /* NetworkScanner.swift in Sources */,
+				A542CBCC3630DB3F80FF378F /* OnboardingView.swift in Sources */,
+				1C0D9F2A2B327F6F2A70F426 /* PaywallView.swift in Sources */,
+				C883E0BEA42235EA9CEE6036 /* RemoteControls.swift in Sources */,
+				80FBDF25F40D6C6D03443597 /* RemoteSheets.swift in Sources */,
+				3A3703D323FA0BDABDBC564F /* RemoteView.swift in Sources */,
+				5F130AD81867634F5ACBD1DD /* RokuController.swift in Sources */,
+				C3CFCEDF7FD48E69944EBA15 /* RootView.swift in Sources */,
+				868D1278497845EDEE7F0FA8 /* SamsungController.swift in Sources */,
+				F7CA0818BAC00CE7597691C8 /* SettingsView.swift in Sources */,
+				1AAF27F56685A27D707254F4 /* SubscriptionStore.swift in Sources */,
+				0C49FD7EFDAFE96293B0EF99 /* TVController.swift in Sources */,
+				2FB7FD08052FE3C844C26349 /* TVManager.swift in Sources */,
+				4A632F96D0E771672A6192BE /* TVModels.swift in Sources */,
+				2D44E47DBCDBBF5935C3F7A6 /* Theme.swift in Sources */,
+				EF1C8DFBD164EEB5BCD1FE9B /* ZapplyApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1F31F9689AEF0375876197E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = ZUCC9R4PP4;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		27685304A429EB02ECD2BDEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Zapply/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zapplyremote.app;
+				PRODUCT_NAME = Zapply;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		52055344537ED45D568D4269 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = ZUCC9R4PP4;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5CEF9353A1A86A28451B33E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Zapply/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zapplyremote.app;
+				PRODUCT_NAME = Zapply;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		507A2B3C09F5FD5668FE471C /* Build configuration list for PBXNativeTarget "Zapply" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27685304A429EB02ECD2BDEA /* Debug */,
+				5CEF9353A1A86A28451B33E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7DEA8333722D32513A01FDC1 /* Build configuration list for PBXProject "Zapply" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52055344537ED45D568D4269 /* Debug */,
+				1F31F9689AEF0375876197E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F72BC4BA679AAFFA499C284 /* Project object */;
+}
