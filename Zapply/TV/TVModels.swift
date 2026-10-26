@@ -48,13 +48,68 @@ struct TVApp: Identifiable, Hashable, Sendable {
     var launchKind: String?
 }
 
-enum RemoteKey: Hashable, Sendable {
+enum RemoteKey: Codable, Hashable, Sendable {
     case up, down, left, right, select
     case back, home, menu, info, power
     case volumeUp, volumeDown, mute
     case channelUp, channelDown
     case playPause, rewind, fastForward
     case digit(Int)
+
+    /// The keys a routine step can press, in the order the step editor lists them.
+    static let routineKeys: [RemoteKey] = [
+        .power, .home, .back, .select, .up, .down, .left, .right, .volumeUp, .volumeDown, .mute,
+        .channelUp, .channelDown, .playPause, .rewind, .fastForward, .menu, .info,
+    ]
+
+    /// Read aloud when "Speak button names" is on, and shown in routines.
+    var spokenName: String {
+        switch self {
+        case .up: "Up"
+        case .down: "Down"
+        case .left: "Left"
+        case .right: "Right"
+        case .select: "OK"
+        case .back: "Back"
+        case .home: "Home"
+        case .menu: "Menu"
+        case .info: "Info"
+        case .power: "Power"
+        case .volumeUp: "Volume up"
+        case .volumeDown: "Volume down"
+        case .mute: "Mute"
+        case .channelUp: "Channel up"
+        case .channelDown: "Channel down"
+        case .playPause: "Play or pause"
+        case .rewind: "Rewind"
+        case .fastForward: "Fast forward"
+        case .digit(let number): "\(number)"
+        }
+    }
+
+    var symbol: String {
+        switch self {
+        case .up: "chevron.up"
+        case .down: "chevron.down"
+        case .left: "chevron.left"
+        case .right: "chevron.right"
+        case .select: "circle.circle"
+        case .back: "arrow.uturn.backward"
+        case .home: "house.fill"
+        case .menu: "line.3.horizontal"
+        case .info: "info.circle"
+        case .power: "power"
+        case .volumeUp: "speaker.wave.3.fill"
+        case .volumeDown: "speaker.wave.1.fill"
+        case .mute: "speaker.slash.fill"
+        case .channelUp: "arrow.up.square"
+        case .channelDown: "arrow.down.square"
+        case .playPause: "playpause.fill"
+        case .rewind: "backward.fill"
+        case .fastForward: "forward.fill"
+        case .digit: "number"
+        }
+    }
 }
 
 /// Pairing tokens (Samsung) and client keys (LG) that let a TV skip its permission prompt next time.

@@ -11,7 +11,6 @@ struct RootView: View {
             } else {
                 OnboardingView {
                     router.tab = .tvs
-                    router.paywall = .upgrade
                     hasOnboarded = true
                 }
             }
@@ -32,6 +31,9 @@ struct MainTabView: View {
             AppsView()
                 .tabItem { Label("Apps", systemImage: "square.grid.2x2.fill") }
                 .tag(AppRouter.Tab.apps)
+            RoutinesView()
+                .tabItem { Label("Routines", systemImage: "list.bullet.rectangle.fill") }
+                .tag(AppRouter.Tab.routines)
             DevicesView()
                 .tabItem { Label("TVs", systemImage: "tv") }
                 .tag(AppRouter.Tab.tvs)

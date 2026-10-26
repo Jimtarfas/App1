@@ -84,6 +84,7 @@ struct PaywallView: View {
             Benefit(symbol: "keyboard", title: "Phone keyboard", text: "Type searches and sign-ins on your TV in seconds.")
             Benefit(symbol: "number.square", title: "Channels and number pad", text: "Channel up and down, plus direct number entry.")
             Benefit(symbol: "tv.and.mediabox", title: "Unlimited TVs", text: "Save and switch between every TV in your home.")
+            Benefit(symbol: "list.bullet.rectangle", title: "Unlimited routines", text: "Run as many one-tap and Siri routines as you like.")
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(18)
@@ -109,8 +110,7 @@ struct PaywallView: View {
         } else {
             VStack(spacing: 12) {
                 ForEach(store.plans) { plan in
-                    PlanCard(plan: plan, isSelected: plan.id == selected?.id,
-                             savings: plan.id == SubscriptionStore.yearlyID ? store.yearlySavings : nil) {
+                    PlanCard(plan: plan, isSelected: plan.id == selected?.id) {
                         selectedID = plan.id
                     }
                 }
@@ -220,7 +220,6 @@ private struct Benefit: View {
 private struct PlanCard: View {
     let plan: Plan
     let isSelected: Bool
-    let savings: Int?
     let select: () -> Void
 
     var body: some View {
@@ -230,17 +229,7 @@ private struct PlanCard: View {
                     .font(.title3)
                     .foregroundStyle(isSelected ? Theme.accent : .secondary)
                 VStack(alignment: .leading, spacing: 4) {
-                    HStack(spacing: 8) {
-                        Text(plan.title).font(.headline)
-                        if let savings, savings > 0 {
-                            Text("SAVE \(savings)%")
-                                .font(.caption2.weight(.heavy))
-                                .foregroundStyle(.black)
-                                .padding(.horizontal, 7)
-                                .padding(.vertical, 3)
-                                .background(Theme.gold, in: Capsule())
-                        }
-                    }
+                    Text(plan.title).font(.headline)
                     Text(summary)
                         .font(.footnote)
                         .foregroundStyle(.secondary)
@@ -265,6 +254,6 @@ private struct PlanCard: View {
 
     private var summary: String {
         if let days = plan.trialDays { return "\(days) days free, then \(plan.price)/\(plan.period)" }
-        return plan.period == "year" ? "\(plan.price) billed once a year" : "\(plan.price) billed every week"
+        return "\(plan.price) billed every \(plan.period)"
     }
 }

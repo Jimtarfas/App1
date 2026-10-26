@@ -1,10 +1,21 @@
 import Foundation
 
-enum TVError: LocalizedError {
+enum TVError: LocalizedError, CustomLocalizedStringResourceConvertible {
     case unreachable, denied, timedOut, unsupported, rokuLimited, badResponse
+    case noTV
+    case appNotFound(String)
+
+    /// What Siri says when a voice command fails.
+    var localizedStringResource: LocalizedStringResource {
+        "\(errorDescription ?? "Something went wrong.")"
+    }
 
     var errorDescription: String? {
         switch self {
+        case .noTV:
+            "No TV is set up yet. Open Zapply and choose your TV in the TVs tab."
+        case .appNotFound(let name):
+            "Couldn't find an app called \(name) on your TV."
         case .unreachable:
             "Couldn't reach the TV. Make sure it's on and connected to the same Wi-Fi network as your iPhone."
         case .denied:

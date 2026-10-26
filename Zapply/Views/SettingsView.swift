@@ -1,9 +1,11 @@
+import AppIntents
 import StoreKit
 import SwiftUI
 
 struct SettingsView: View {
     @Environment(SubscriptionStore.self) private var store
     @Environment(AppRouter.self) private var router
+    @Environment(RemotePreferences.self) private var prefs
     @AppStorage(Haptics.key) private var haptics = true
     @State private var showManageSubscription = false
     @State private var isRestoring = false
@@ -15,6 +17,7 @@ struct SettingsView: View {
     }
 
     var body: some View {
+        @Bindable var prefs = prefs
         NavigationStack {
             List {
                 Section { premiumCard }
@@ -37,10 +40,44 @@ struct SettingsView: View {
                 }
                 .listRowBackground(Theme.surface)
 
-                Section("Remote") {
+                Section {
+                    Picker(selection: $prefs.layout) {
+                        ForEach(RemotePreferences.Layout.allCases) { Text($0.title).tag($0) }
+                    } label: {
+                        Label("Remote Layout", systemImage: "rectangle.grid.1x2")
+                    }
+                    Picker(selection: $prefs.buttonSize) {
+                        ForEach(RemotePreferences.ButtonSize.allCases) { Text($0.title).tag($0) }
+                    } label: {
+                        Label("Button Size", systemImage: "textformat.size")
+                    }
+                    Toggle(isOn: $prefs.highContrast) {
+                        Label("High Contrast", systemImage: "circle.lefthalf.filled")
+                    }
+                    Toggle(isOn: $prefs.speakButtons) {
+                        Label("Speak Button Names", systemImage: "speaker.wave.2.fill")
+                    }
                     Toggle(isOn: $haptics) {
                         Label("Haptic Feedback", systemImage: "hand.tap")
                     }
+                } header: {
+                    Text("Remote")
+                } footer: {
+                    Text("Big Buttons shows the most-used controls, each with a word label. Speak Button Names reads each press aloud and stays quiet while VoiceOver is on.")
+                }
+                .listRowBackground(Theme.surface)
+
+                Section {
+                    SiriTipView(intent: MuteTVIntent())
+                        .siriTipViewStyle(.dark)
+                        .listRowInsets(EdgeInsets())
+                    ShortcutsLink()
+                        .shortcutsLinkStyle(.automaticOutline)
+                        .frame(maxWidth: .infinity)
+                } header: {
+                    Text("Siri & Shortcuts")
+                } footer: {
+                    Text("Ask Siri to turn the TV off, mute it, or turn it up or down, or to run one of your routines.")
                 }
                 .listRowBackground(Theme.surface)
 
@@ -88,7 +125,7 @@ struct SettingsView: View {
                     .foregroundStyle(Theme.gold)
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Zapply Premium").font(.headline)
-                    Text("Keyboard, channels and unlimited TVs are unlocked.")
+                    Text("Keyboard, channels, unlimited TVs and routines are unlocked.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
@@ -102,7 +139,7 @@ struct SettingsView: View {
                         .foregroundStyle(Theme.gold)
                     VStack(alignment: .leading, spacing: 2) {
                         Text("Upgrade to Premium").font(.headline).foregroundStyle(.white)
-                        Text("Keyboard, channel controls and unlimited TVs.")
+                        Text("Keyboard, channel controls, unlimited TVs and routines.")
                             .font(.footnote)
                             .foregroundStyle(.secondary)
                     }

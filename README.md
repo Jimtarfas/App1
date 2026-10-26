@@ -1,6 +1,6 @@
-# Universal TV Remote: Zapply
+# Zapply: Big Button TV Remote
 
-An iPhone remote for Roku, Samsung (Tizen) and LG (webOS) TVs, written in SwiftUI.
+An easy-to-see iPhone remote for Roku, Samsung (Tizen) and LG (webOS) TVs, written in SwiftUI. It's built for people who find small remotes hard to use: large labeled keys, high contrast, spoken button names, Siri voice commands and one-tap routines.
 
 - **Bundle ID:** `com.zapplyremote.app`
 - **App Store Connect app:** 6826950199
@@ -10,12 +10,14 @@ An iPhone remote for Roku, Samsung (Tizen) and LG (webOS) TVs, written in SwiftU
 ## Features
 
 - Finds TVs by probing the local /24 for each platform's control port (Roku 8060, Samsung 8001, LG 3000/3001). This only needs Local Network permission, not the multicast entitlement. You can also add a TV by IP address.
-- Remote: direction pad (tap or swipe), OK, back, home, menu, info, volume, mute, playback and power.
+- Two layouts: **Big Buttons** (default; fewer, larger keys with word labels, in Standard/Large/Extra Large) and **Full Remote** (every control). See `Zapply/Views/RemoteView.swift` and `Zapply/App/RemotePreferences.swift`.
+- High contrast keys and Speak Button Names (AVSpeechSynthesizer, silent while VoiceOver runs).
+- Siri & Shortcuts: App Intents in `Zapply/App/ZapplyIntents.swift` (turn off, mute, volume up/down, press any button, open a TV app, run a routine).
+- Routines: user-built step lists (press, open app, wait, type) in `Zapply/Routines/`. Free accounts keep 3.
 - App launcher for each TV's installed apps.
 - A Demo TV that draws a virtual screen, so every control can be tried without a TV (and by App Review).
-- **Premium** (StoreKit 2, group "Zapply Premium"): phone keyboard, channel buttons and number pad, and more than one saved TV.
-  - `com.zapplyremote.app.premium.weekly`: $4.99 per week
-  - `com.zapplyremote.app.premium.yearly`: $29.99 per year with a 3-day free trial
+- **Premium** (StoreKit 2, group "Zapply Premium"): phone keyboard, channel buttons and number pad, more than one saved TV, and unlimited routines.
+  - `com.zapplyremote.app.premium.yearly`: $29.99 per year with a 3-day free trial (the app no longer offers the weekly product created in App Store Connect).
 
 | Platform | Transport | Code |
 |---|---|---|
@@ -34,9 +36,9 @@ The Run scheme uses `StoreKit/Zapply.storekit` for local purchase testing. Keep 
 
 ## Store assets
 
-- Listing text and review notes: `marketing/aso/app-store-listing.md`
+- Listing text and review notes: `marketing/aso/app-store-listing.md`; draft reply to the 4.3/4.2.6 rejection: `marketing/aso/app-review-reply.md`
 - Screenshots: `swift scripts/make-store-screenshots.swift marketing/screenshots/captions.json marketing/screenshots/raw marketing/screenshots` renders the 6.9" and 6.5" sets from raw captures.
-- Debug-only launch arguments stage the captures: `-hasOnboarded YES -demo YES -premium YES`, `-sampleTVs YES -startTab tvs`, `-showPaywall upgrade`, and `-autoplay YES` for the scripted walkthrough used in the App Review video (`marketing/video/zapply-demo.mp4`, not committed).
+- Debug-only launch arguments stage the captures: `-hasOnboarded YES -demo YES -premium YES`, `-sampleTVs YES -startTab tvs`, `-showPaywall upgrade`, `-buttonSize extraLarge -highContrast YES`, and `-autoplay YES` for the scripted walkthrough used in the App Review video (`marketing/video/zapply-demo.mp4`, not committed).
 - App icon: `swift scripts/make-icon.swift Zapply/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png`
 
 ## Website

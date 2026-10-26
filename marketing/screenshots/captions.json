@@ -1,8 +1,8 @@
 [
-  { "raw": "01-remote", "name": "01-remote", "headline": "Your iPhone is now your TV remote", "subheadline": "Works with Roku, Samsung and LG TVs" },
-  { "raw": "02-tvs", "name": "02-find-tv", "headline": "Finds your TV in seconds", "subheadline": "Same Wi-Fi, no codes, no setup" },
-  { "raw": "03-controls", "name": "03-controls", "headline": "Big, easy controls", "subheadline": "Direction pad, volume, playback and power" },
-  { "raw": "04-apps", "name": "04-apps", "headline": "Open apps in one tap", "subheadline": "Launch your TV's apps from your phone" },
-  { "raw": "05-keyboard", "name": "05-keyboard", "headline": "Type with your phone", "subheadline": "Search faster with your iPhone keyboard", "premium": true },
-  { "raw": "06-channels", "name": "06-channels", "headline": "Change channels fast", "subheadline": "Channel buttons and a number pad", "premium": true }
+  { "raw": "11-big", "name": "01-big-buttons", "headline": "Big buttons that say what they do", "subheadline": "A TV remote that's easy to see and easy to use" },
+  { "raw": "12-contrast", "name": "02-high-contrast", "headline": "Extra large and high contrast", "subheadline": "Pick the size and contrast that suit you" },
+  { "raw": "13-routines", "name": "03-siri-routines", "headline": "Just ask Siri", "subheadline": "Voice commands and one-tap routines" },
+  { "raw": "14-tvs", "name": "04-find-tv", "headline": "Finds your TV in seconds", "subheadline": "Works with Roku, Samsung and LG TVs" },
+  { "raw": "15-apps", "name": "05-apps", "headline": "Open apps in one tap", "subheadline": "Launch your TV's apps from your phone" },
+  { "raw": "16-keyboard", "name": "06-keyboard", "headline": "Type with your phone", "subheadline": "Search faster with your iPhone keyboard", "premium": true }
 ]

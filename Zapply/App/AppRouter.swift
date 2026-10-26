@@ -2,7 +2,7 @@ import SwiftUI
 
 /// Features that need Zapply Premium. Each one opens the paywall with its own headline.
 enum PremiumFeature: String, Identifiable {
-    case keyboard, channels, multipleTVs, upgrade
+    case keyboard, channels, multipleTVs, routines, upgrade
 
     var id: String { rawValue }
 
@@ -11,6 +11,7 @@ enum PremiumFeature: String, Identifiable {
         case .keyboard: "Type on your TV with your phone"
         case .channels: "Unlock channel controls"
         case .multipleTVs: "Control every TV at home"
+        case .routines: "Create unlimited routines"
         case .upgrade: "Get the full remote"
         }
     }
@@ -20,7 +21,7 @@ enum PremiumFeature: String, Identifiable {
 @MainActor
 final class AppRouter {
     enum Tab: Hashable {
-        case remote, apps, tvs, settings
+        case remote, apps, routines, tvs, settings
     }
 
     enum RemoteSheet: String, Identifiable {
@@ -37,6 +38,7 @@ final class AppRouter {
         // Launch arguments used to stage App Store screenshots, e.g. `-startTab apps`.
         switch UserDefaults.standard.string(forKey: "startTab") {
         case "apps": tab = .apps
+        case "routines": tab = .routines
         case "tvs": tab = .tvs
         case "settings": tab = .settings
         default: break

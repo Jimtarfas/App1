@@ -13,6 +13,8 @@ final class DemoAutoplay {
     var caption: String?
     /// Text the keyboard sheet should show, as if typed.
     var typedText: String?
+    /// Moves onboarding to the given step.
+    var onboardingStep: Int?
 
     @ObservationIgnored private var window: UIWindow?
 
@@ -23,50 +25,75 @@ final class DemoAutoplay {
     }
 
     private func run(router: AppRouter, tvs: TVManager, store: SubscriptionStore) async {
-        await pause(2.5)
-        await tap(220, 825) {
+        let prefs = RemotePreferences.shared
+        await pause(3)
+        await tap(220, 877) { onboardingStep = 1 }
+        caption = "Pick a comfortable button size"
+        await pause(1)
+        await tap(350, 200) { prefs.buttonSize = .extraLarge }
+        await pause(0.8)
+        await tap(370, 376) { prefs.highContrast = true }
+        await pause(1.2)
+        await tap(370, 376) { prefs.highContrast = false }
+        await tap(89, 200) { prefs.buttonSize = .standard }
+        await pause(0.6)
+        caption = nil
+        await tap(220, 826) {
             router.tab = .tvs
-            router.paywall = .upgrade
             UserDefaults.standard.set(true, forKey: "hasOnboarded")
         }
-        caption = "Subscription: prices, trial, Restore, Terms, Privacy"
-        await pause(5)
-        caption = nil
-        await tap(36, 88) { router.paywall = nil }
-        caption = "TVs on the same Wi-Fi are found automatically"
-        await pause(4)
+        caption = "Finds Roku, Samsung and LG TVs on your Wi-Fi"
+        await pause(3.5)
         caption = "No TV nearby? The Demo TV reacts to every button"
         await tap(143, tvs.hasScanned ? 448 : 434) {
             router.tab = .remote
             Task { await tvs.connect(.demo) }
         }
         await pause(1.5)
-        caption = nil
-        for (x, y, key) in [(296.0, 534.0, RemoteKey.right), (296, 534, .right), (220, 607, .down), (144, 534, .left),
-                            (220, 534, .select), (62, 686, .volumeUp), (62, 686, .volumeUp), (62, 760, .volumeDown),
-                            (220, 834, .playPause), (306, 834, .fastForward), (132, 382, .back), (220, 382, .home)] {
+        caption = "Big buttons, each with a word label"
+        for (x, y, key) in [(290.0, 502.0, RemoteKey.right), (290, 502, .right), (220, 571, .down), (220, 502, .select),
+                            (322, 642, .volumeUp), (322, 642, .volumeUp), (116, 712, .mute), (322, 712, .playPause),
+                            (322, 360, .home)] {
             await tap(x, y) { tvs.send(key) }
         }
         caption = "Premium controls show a padlock"
-        await tap(256, 688) { router.paywall = .keyboard }
-        await pause(3.5)
+        await tap(322, 782) { router.paywall = .channels }
+        await pause(4)
         caption = nil
-        await tap(36, 88) { router.paywall = nil }
+        await tap(35, 88) { router.paywall = nil }
         await pause(0.6)
-        caption = "Open your TV's apps"
-        await tap(173, 900) { router.tab = .apps }
-        await pause(1.5)
-        await tap(359, 234) { if let music = DemoTV.apps.first(where: { $0.id == "music" }) { tvs.launch(music) } }
-        await pause(0.8)
-        await tap(79, 900) { router.tab = .remote }
-        caption = nil
+
+        caption = "One-tap routines, also by voice with Siri"
+        await tap(220, 904) { router.tab = .routines }
+        await pause(2.5)
+        if let bedtime = RoutineStore.shared.routines.first {
+            await tap(356, 211) {
+                Task { try? await RoutineStore.shared.run(bedtime, on: tvs); tvs.notice = "\(bedtime.name) finished" }
+            }
+        }
+        await pause(3)
+        caption = "Bedtime muted the TV and switched it off"
+        await tap(67, 904) { router.tab = .remote }
         await pause(2)
+        caption = nil
+        await tap(394, 92) { tvs.send(.power) }
+        await pause(1)
+
+        caption = "High contrast for low vision"
+        await tap(372, 904) { router.tab = .settings }
+        await pause(1)
+        await tap(370, 634) { prefs.highContrast = true }
+        await pause(0.8)
+        await tap(67, 904) { router.tab = .remote }
+        await pause(1)
+        await tap(290, 502) { tvs.send(.right) }
+        await pause(1)
 
         caption = "With Premium (test subscription)"
         store.debugSetPremium(true)
         await pause(2)
         caption = "Type on the TV with the phone keyboard"
-        await tap(256, 688) { router.remoteSheet = .keyboard }
+        await tap(116, 851) { router.remoteSheet = .keyboard }
         await pause(1)
         var typed = ""
         for character in "cooking shows" {
@@ -79,16 +106,16 @@ final class DemoAutoplay {
         await pause(1.5)
         await tap(377, 491) { router.remoteSheet = nil }
         caption = "Channels and number pad"
-        await tap(256, 760) { router.remoteSheet = .numberPad }
+        await tap(322, 851) { router.remoteSheet = .numberPad }
         await pause(1)
         await tap(135, 483) { tvs.send(.digit(1)) }
         await tap(220, 483) { tvs.send(.digit(2)) }
-        await pause(1.8)
+        await pause(2.3)
         await tap(319, 792) { tvs.send(.channelUp) }
         await pause(1.5)
         await tap(377, 408) { router.remoteSheet = nil }
         caption = "Restore, Manage Subscription, Privacy Policy, Terms"
-        await tap(361, 900) { router.tab = .settings }
+        await tap(372, 904) { router.tab = .settings }
         await pause(4)
         caption = nil
     }

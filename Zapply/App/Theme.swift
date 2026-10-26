@@ -51,17 +51,54 @@ enum AppPalette {
 /// A round remote key with a soft press animation.
 struct RoundKeyStyle: ButtonStyle {
     var size: CGFloat = 60
-    var tint: Color = .white
+    var tint: Color?
 
     func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(.system(size: size * 0.36, weight: .semibold))
-            .foregroundStyle(tint)
-            .frame(width: size, height: size)
-            .background(Circle().fill(configuration.isPressed ? Theme.surfacePressed : Theme.surface))
-            .overlay(Circle().strokeBorder(Theme.stroke))
-            .scaleEffect(configuration.isPressed ? 0.93 : 1)
-            .animation(.spring(duration: 0.18), value: configuration.isPressed)
+        RoundKey(configuration: configuration, size: size, tint: tint)
+    }
+
+    private struct RoundKey: View {
+        let configuration: Configuration
+        let size: CGFloat
+        let tint: Color?
+        @Environment(\.keyColors) private var colors
+
+        var body: some View {
+            configuration.label
+                .font(.system(size: size * 0.36, weight: .semibold))
+                .foregroundStyle(tint ?? colors.foreground)
+                .frame(width: size, height: size)
+                .background(Circle().fill(configuration.isPressed ? colors.pressed : colors.fill))
+                .overlay(Circle().strokeBorder(colors.stroke, lineWidth: colors.strokeWidth))
+                .scaleEffect(configuration.isPressed ? 0.93 : 1)
+                .animation(.spring(duration: 0.18), value: configuration.isPressed)
+        }
+    }
+}
+
+/// A wide key with an icon and a text label, used by the Big Buttons remote.
+struct LabeledKeyStyle: ButtonStyle {
+    var tint: Color?
+
+    func makeBody(configuration: Configuration) -> some View {
+        LabeledKey(configuration: configuration, tint: tint)
+    }
+
+    private struct LabeledKey: View {
+        let configuration: Configuration
+        let tint: Color?
+        @Environment(\.keyColors) private var colors
+
+        var body: some View {
+            configuration.label
+                .foregroundStyle(tint ?? colors.foreground)
+                .background(RoundedRectangle(cornerRadius: 18, style: .continuous)
+                    .fill(configuration.isPressed ? colors.pressed : colors.fill))
+                .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
+                    .strokeBorder(colors.stroke, lineWidth: colors.strokeWidth))
+                .scaleEffect(configuration.isPressed ? 0.97 : 1)
+                .animation(.spring(duration: 0.18), value: configuration.isPressed)
+        }
     }
 }
 

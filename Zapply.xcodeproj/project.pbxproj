@@ -14,6 +14,7 @@
 		1AAF27F56685A27D707254F4 /* SubscriptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD50497D86355E12143FA76 /* SubscriptionStore.swift */; };
 		1C0D9F2A2B327F6F2A70F426 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CCD47058A7E4A4F3A7DFD6 /* PaywallView.swift */; };
 		203107F7A7917DC6715B19CB /* DemoTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8C3833AB0F22928002A399 /* DemoTV.swift */; };
+		2B01E7A02447CEBA736859E6 /* RemotePreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCBCF87988D5E57D822AFBD /* RemotePreferences.swift */; };
 		2D44E47DBCDBBF5935C3F7A6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F257227E4E8B9C636281A5F /* Theme.swift */; };
 		2FB7FD08052FE3C844C26349 /* TVManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D02FBC35DCF93E8A63DCCA5 /* TVManager.swift */; };
 		3A3703D323FA0BDABDBC564F /* RemoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC29EE6E6CC8780A0F9483 /* RemoteView.swift */; };
@@ -26,8 +27,11 @@
 		927206EC44FA077E92FACEDD /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F5904115DC4F2DC1E2F8F0 /* DevicesView.swift */; };
 		A3F2A17776F287A0B508DE8D /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3851944DEE0F3CE66E80750 /* AppsView.swift */; };
 		A542CBCC3630DB3F80FF378F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ED6C74ED58242E6DB1A810 /* OnboardingView.swift */; };
+		B23E82A698083F637E6D167F /* ZapplyIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B857143BC9C4657F331EB0 /* ZapplyIntents.swift */; };
+		C1D44D8148890D10FD4E88E7 /* RoutinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E887A17685D137DD153F4EF /* RoutinesView.swift */; };
 		C3CFCEDF7FD48E69944EBA15 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB0F43D63EF6F58DE98BC7 /* RootView.swift */; };
 		C883E0BEA42235EA9CEE6036 /* RemoteControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315A52082BD5CB8C12559862 /* RemoteControls.swift */; };
+		C88E3FDF80237866D3473841 /* RoutineStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E5CDA754A1BA7BB7A4BE8 /* RoutineStore.swift */; };
 		CDABD40029150680A660306E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F0E3F020192B4B1BE2AA3E8D /* PrivacyInfo.xcprivacy */; };
 		EF1C8DFBD164EEB5BCD1FE9B /* ZapplyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F56C7C8DDA0E9875400A2 /* ZapplyApp.swift */; };
 		F7CA0818BAC00CE7597691C8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D4B7A9C64885E00193B05D /* SettingsView.swift */; };
@@ -37,6 +41,7 @@
 		0C43AC5710987820AD6A8A48 /* DemoAutoplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAutoplay.swift; sourceTree = "<group>"; };
 		0F8F56C7C8DDA0E9875400A2 /* ZapplyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZapplyApp.swift; sourceTree = "<group>"; };
 		13CCD47058A7E4A4F3A7DFD6 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		2E887A17685D137DD153F4EF /* RoutinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesView.swift; sourceTree = "<group>"; };
 		315A52082BD5CB8C12559862 /* RemoteControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteControls.swift; sourceTree = "<group>"; };
 		32B9A0F03E62679E064CEFDA /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		3D02FBC35DCF93E8A63DCCA5 /* TVManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVManager.swift; sourceTree = "<group>"; };
@@ -46,6 +51,7 @@
 		63C7F9A38C859137605597AB /* TVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVController.swift; sourceTree = "<group>"; };
 		6E490ED79F65A1A626854D47 /* NetworkScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkScanner.swift; sourceTree = "<group>"; };
 		71BF9883C9F6917822CA0D5D /* SamsungController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamsungController.swift; sourceTree = "<group>"; };
+		7DCBCF87988D5E57D822AFBD /* RemotePreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePreferences.swift; sourceTree = "<group>"; };
 		7F257227E4E8B9C636281A5F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		85D4B7A9C64885E00193B05D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9BD50497D86355E12143FA76 /* SubscriptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStore.swift; sourceTree = "<group>"; };
@@ -54,6 +60,8 @@
 		BB4C12DB4ABCC21C3A4F469A /* Zapply.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Zapply.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5EAEDD60D3D9611E64E3A6 /* RemoteSheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSheets.swift; sourceTree = "<group>"; };
 		C2ED6C74ED58242E6DB1A810 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		C44E5CDA754A1BA7BB7A4BE8 /* RoutineStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineStore.swift; sourceTree = "<group>"; };
+		D9B857143BC9C4657F331EB0 /* ZapplyIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZapplyIntents.swift; sourceTree = "<group>"; };
 		DFBB3BFF3A20A1C129D59347 /* RokuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RokuController.swift; sourceTree = "<group>"; };
 		E8F5904115DC4F2DC1E2F8F0 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
 		EC55424AE34705C1EB55748C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +125,7 @@
 				EC55424AE34705C1EB55748C /* Info.plist */,
 				C5BFA1FACA8BB5F93D51F7BE /* App */,
 				0BDE374685CAE1B5FEF2CCF5 /* Resources */,
+				F9F0375AA11C08ED0892C0DF /* Routines */,
 				3DD882EB4C23C96A8C12D28A /* Store */,
 				8F2A76E20505148111012263 /* TV */,
 				F80557EAF9BF1FEB37C72E7C /* Views */,
@@ -129,8 +138,10 @@
 			children = (
 				32B9A0F03E62679E064CEFDA /* AppRouter.swift */,
 				0C43AC5710987820AD6A8A48 /* DemoAutoplay.swift */,
+				7DCBCF87988D5E57D822AFBD /* RemotePreferences.swift */,
 				7F257227E4E8B9C636281A5F /* Theme.swift */,
 				0F8F56C7C8DDA0E9875400A2 /* ZapplyApp.swift */,
+				D9B857143BC9C4657F331EB0 /* ZapplyIntents.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -149,6 +160,15 @@
 				85D4B7A9C64885E00193B05D /* SettingsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F9F0375AA11C08ED0892C0DF /* Routines */ = {
+			isa = PBXGroup;
+			children = (
+				C44E5CDA754A1BA7BB7A4BE8 /* RoutineStore.swift */,
+				2E887A17685D137DD153F4EF /* RoutinesView.swift */,
+			);
+			path = Routines;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,10 +253,13 @@
 				A542CBCC3630DB3F80FF378F /* OnboardingView.swift in Sources */,
 				1C0D9F2A2B327F6F2A70F426 /* PaywallView.swift in Sources */,
 				C883E0BEA42235EA9CEE6036 /* RemoteControls.swift in Sources */,
+				2B01E7A02447CEBA736859E6 /* RemotePreferences.swift in Sources */,
 				80FBDF25F40D6C6D03443597 /* RemoteSheets.swift in Sources */,
 				3A3703D323FA0BDABDBC564F /* RemoteView.swift in Sources */,
 				5F130AD81867634F5ACBD1DD /* RokuController.swift in Sources */,
 				C3CFCEDF7FD48E69944EBA15 /* RootView.swift in Sources */,
+				C88E3FDF80237866D3473841 /* RoutineStore.swift in Sources */,
+				C1D44D8148890D10FD4E88E7 /* RoutinesView.swift in Sources */,
 				868D1278497845EDEE7F0FA8 /* SamsungController.swift in Sources */,
 				F7CA0818BAC00CE7597691C8 /* SettingsView.swift in Sources */,
 				1AAF27F56685A27D707254F4 /* SubscriptionStore.swift in Sources */,
@@ -245,6 +268,7 @@
 				4A632F96D0E771672A6192BE /* TVModels.swift in Sources */,
 				2D44E47DBCDBBF5935C3F7A6 /* Theme.swift in Sources */,
 				EF1C8DFBD164EEB5BCD1FE9B /* ZapplyApp.swift in Sources */,
+				B23E82A698083F637E6D167F /* ZapplyIntents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +309,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = ZUCC9R4PP4;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -367,7 +391,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = ZUCC9R4PP4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

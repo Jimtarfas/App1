@@ -4,23 +4,24 @@ import SwiftUI
 struct DPad: View {
     var size: CGFloat = 212
     let press: (RemoteKey) -> Void
+    @Environment(\.keyColors) private var colors
 
     var body: some View {
         ZStack {
             Circle()
-                .fill(Theme.surface)
-                .overlay(Circle().strokeBorder(Theme.stroke))
+                .fill(colors.fill)
+                .overlay(Circle().strokeBorder(colors.stroke, lineWidth: colors.strokeWidth))
             arrow(.up, "chevron.up", label: "Up").offset(y: -size * 0.355)
             arrow(.down, "chevron.down", label: "Down").offset(y: size * 0.355)
             arrow(.left, "chevron.left", label: "Left").offset(x: -size * 0.355)
             arrow(.right, "chevron.right", label: "Right").offset(x: size * 0.355)
             Button { press(.select) } label: {
                 Text("OK")
-                    .font(.system(size: 22, weight: .bold))
-                    .foregroundStyle(.white)
+                    .font(.system(size: size * 0.105, weight: .bold))
+                    .foregroundStyle(colors.okForeground)
                     .frame(width: size * 0.4, height: size * 0.4)
-                    .background(Theme.brand, in: Circle())
-                    .shadow(color: Theme.accent.opacity(0.45), radius: 14, y: 4)
+                    .background(colors.okFill, in: Circle())
+                    .shadow(color: Theme.accent.opacity(0.35), radius: 14, y: 4)
             }
             .buttonStyle(PressScaleStyle())
             .accessibilityLabel("OK")
@@ -41,8 +42,8 @@ struct DPad: View {
     private func arrow(_ key: RemoteKey, _ symbol: String, label: String) -> some View {
         Button { press(key) } label: {
             Image(systemName: symbol)
-                .font(.system(size: 24, weight: .bold))
-                .foregroundStyle(.white.opacity(0.9))
+                .font(.system(size: size * 0.115, weight: .bold))
+                .foregroundStyle(colors.foreground)
                 .frame(width: size * 0.28, height: size * 0.28)
                 .contentShape(Rectangle())
         }
@@ -66,6 +67,7 @@ struct Rocker: View {
     let down: RemoteKey
     var isLocked = false
     let action: (RemoteKey) -> Void
+    @Environment(\.keyColors) private var colors
 
     var body: some View {
         VStack(spacing: 0) {
@@ -87,10 +89,10 @@ struct Rocker: View {
         }
         .buttonStyle(PressFadeStyle())
         .font(.system(size: 22, weight: .semibold))
-        .foregroundStyle(.white)
+        .foregroundStyle(colors.foreground)
         .frame(width: 64, height: 136)
-        .background(Capsule().fill(Theme.surface))
-        .overlay(Capsule().strokeBorder(Theme.stroke))
+        .background(Capsule().fill(colors.fill))
+        .overlay(Capsule().strokeBorder(colors.stroke, lineWidth: colors.strokeWidth))
         .overlay(alignment: .topTrailing) {
             if isLocked { LockBadge().offset(x: 4, y: -2) }
         }

@@ -4,6 +4,9 @@ import Foundation
 @Observable
 @MainActor
 final class TVManager {
+    /// One instance shared by the app, Siri and Shortcuts.
+    static let shared = TVManager()
+
     enum Status: Equatable {
         case idle
         case connecting
@@ -102,7 +105,35 @@ final class TVManager {
 
     func send(_ key: RemoteKey) {
         Haptics.tap()
+        Speech.say(key.spokenName)
         enqueue { try await $0.send(key) }
+    }
+
+    /// Runs one command and waits for it to finish, reconnecting to the last TV first if needed.
+    /// Used by routines, Siri and Shortcuts, which may run while the app is in the background.
+    func perform(_ work: (any TVController) async throws -> Void) async throws {
+        if !isConnected {
+            let lastID = UserDefaults.standard.string(forKey: Self.lastKey)
+            guard let device = current ?? saved.first(where: { $0.id == lastID }) ?? saved.first else { throw TVError.noTV }
+            await connect(device)
+        }
+        guard let controller, isConnected else {
+            if case .failed(let message) = status { throw TVCommandFailure(message: message) }
+            throw TVError.unreachable
+        }
+        try await work(controller)
+    }
+
+    /// Opens a TV app by name, matching the exact name first, then any app whose name contains it.
+    func openApp(named name: String) async throws {
+        try await perform { _ in }
+        if apps.isEmpty { await refreshApps() }
+        let target = name.trimmingCharacters(in: .whitespaces)
+        guard let app = apps.first(where: { $0.name.localizedCaseInsensitiveCompare(target) == .orderedSame })
+            ?? apps.first(where: { $0.name.localizedCaseInsensitiveContains(target) }) else {
+            throw TVError.appNotFound(target)
+        }
+        try await perform { try await $0.launch(app) }
     }
 
     func updateText(from old: String, to new: String) {
@@ -176,7 +207,7 @@ final class TVManager {
 
     private func handleCommandError(_ error: Error) {
         switch error {
-        case TVError.rokuLimited, TVError.unsupported, TVError.badResponse:
+        case TVError.rokuLimited, TVError.unsupported, TVError.badResponse, TVError.appNotFound:
             notice = Self.describe(error)
         default:
             controller?.disconnect()
@@ -231,9 +262,16 @@ final class TVManager {
         }
     }
 
-    private static func describe(_ error: Error) -> String {
+    static func describe(_ error: Error) -> String {
         if let error = error as? TVError { return error.errorDescription ?? "" }
         if error is URLError { return TVError.unreachable.errorDescription ?? "" }
         return error.localizedDescription
     }
+}
+
+/// A connection failure with the message already shown in the app, so Siri can say the same thing.
+struct TVCommandFailure: LocalizedError, CustomLocalizedStringResourceConvertible {
+    let message: String
+    var errorDescription: String? { message }
+    var localizedStringResource: LocalizedStringResource { "\(message)" }
 }
