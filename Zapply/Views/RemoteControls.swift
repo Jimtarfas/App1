@@ -175,7 +175,7 @@ struct DemoScreenView: View {
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
                     .frame(height: 54)
-                    .background(AppPalette.color(for: app.name).gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                    .background(AppPalette.color(for: app).gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                     .overlay(RoundedRectangle(cornerRadius: 8, style: .continuous).strokeBorder(.white, lineWidth: isFocused ? 2.5 : 0))
                     .scaleEffect(isFocused ? 1.08 : 1)
                     .zIndex(isFocused ? 1 : 0)
@@ -192,7 +192,7 @@ struct DemoScreenView: View {
 
     private func playing(_ app: TVApp) -> some View {
         ZStack {
-            Rectangle().fill(AppPalette.color(for: app.name).gradient)
+            Rectangle().fill(AppPalette.color(for: app).gradient)
             VStack(spacing: 6) {
                 Image(systemName: app.symbol ?? "play.rectangle")
                     .font(.system(size: 34, weight: .semibold))

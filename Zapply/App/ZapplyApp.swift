@@ -13,6 +13,9 @@ struct ZapplyApp: App {
                 .environment(tvs)
                 .environment(router)
                 .tint(Theme.accent)
+                #if DEBUG
+                .task { DemoAutoplay.shared.start(router: router, tvs: tvs, store: store) }
+                #endif
         }
     }
 }

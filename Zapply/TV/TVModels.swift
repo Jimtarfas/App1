@@ -41,8 +41,9 @@ struct TVApp: Identifiable, Hashable, Sendable {
     let id: String
     let name: String
     var iconURL: URL?
-    /// SF Symbol for the demo TV's built-in apps.
+    /// SF Symbol and tile color for the demo TV's built-in apps.
     var symbol: String?
+    var paletteIndex: Int?
     /// Samsung's `app_type`, which picks how the app is launched.
     var launchKind: String?
 }

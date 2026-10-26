@@ -59,7 +59,7 @@ private struct AppTile: View {
     var body: some View {
         VStack(spacing: 8) {
             ZStack {
-                Rectangle().fill(AppPalette.color(for: app.name).gradient)
+                Rectangle().fill(AppPalette.color(for: app).gradient)
                 if let icon {
                     Image(uiImage: icon)
                         .resizable()

@@ -61,9 +61,16 @@ struct KeyboardSheet: View {
                 }
                 tvs.updateText(from: old, to: new)
             }
+            #if DEBUG
+            .onChange(of: DemoAutoplay.shared.typedText) { _, typed in
+                if let typed { text = typed }
+            }
+            #endif
         }
         .presentationDetents([.medium, .large])
         .presentationBackground(Theme.background)
+        // Keep the remote behind the sheet bright and usable while typing.
+        .presentationBackgroundInteraction(.enabled(upThrough: .medium))
         .onAppear { isFocused = true }
     }
 
@@ -122,6 +129,7 @@ struct NumberPadSheet: View {
         }
         .presentationDetents([.fraction(0.66), .large])
         .presentationBackground(Theme.background)
+        .presentationBackgroundInteraction(.enabled(upThrough: .fraction(0.66)))
     }
 
     private func digit(_ number: Int) -> some View {

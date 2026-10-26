@@ -38,6 +38,10 @@ enum AppPalette {
         Color(red: 0.91, green: 0.30, blue: 0.62), Color(red: 0.33, green: 0.40, blue: 0.55),
     ]
 
+    static func color(for app: TVApp) -> Color {
+        app.paletteIndex.map { colors[$0 % colors.count] } ?? color(for: app.name)
+    }
+
     static func color(for name: String) -> Color {
         let sum = name.unicodeScalars.reduce(UInt32(0)) { $0 &+ $1.value }
         return colors[Int(sum % UInt32(colors.count))]

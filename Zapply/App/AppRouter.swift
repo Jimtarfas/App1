@@ -23,8 +23,14 @@ final class AppRouter {
         case remote, apps, tvs, settings
     }
 
+    enum RemoteSheet: String, Identifiable {
+        case keyboard, numberPad
+        var id: String { rawValue }
+    }
+
     var tab: Tab = .remote
     var paywall: PremiumFeature?
+    var remoteSheet: RemoteSheet?
 
     init() {
         #if DEBUG

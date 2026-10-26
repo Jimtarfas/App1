@@ -45,6 +45,10 @@ final class TVManager {
             Task { await connect(.demo) }
             return
         }
+        if UserDefaults.standard.bool(forKey: "sampleTVs") {
+            loadSampleTVs()
+            return
+        }
         #endif
         let lastID = UserDefaults.standard.string(forKey: Self.lastKey)
         if let last = saved.first(where: { $0.id == lastID }) {
@@ -201,6 +205,22 @@ final class TVManager {
             UserDefaults.standard.set(data, forKey: Self.savedKey)
         }
     }
+
+    #if DEBUG
+    /// Example TVs for App Store screenshots (`-sampleTVs YES`), driven by the demo TV.
+    private func loadSampleTVs() {
+        saved = [
+            TVDevice(name: "Living Room TV", model: "Streaming player", host: "192.168.1.23", platform: .roku),
+            TVDevice(name: "Bedroom TV", model: "Smart TV", host: "192.168.1.41", platform: .samsung),
+        ]
+        discovered = saved + [TVDevice(name: "Kitchen TV", model: "webOS", host: "192.168.1.57", platform: .lg)]
+        hasScanned = true
+        current = saved[0]
+        controller = DemoController(device: saved[0])
+        status = .connected
+        apps = DemoTV.apps
+    }
+    #endif
 
     private static func makeController(for device: TVDevice) -> any TVController {
         switch device.platform {

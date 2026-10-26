@@ -7,14 +7,14 @@ final class DemoTV {
     static let shared = DemoTV()
     static let columns = 4
     static let apps: [TVApp] = [
-        TVApp(id: "movies", name: "Movies", symbol: "film"),
-        TVApp(id: "series", name: "Series", symbol: "play.tv"),
-        TVApp(id: "music", name: "Music", symbol: "music.note"),
-        TVApp(id: "sports", name: "Sports", symbol: "sportscourt"),
-        TVApp(id: "news", name: "News", symbol: "newspaper"),
-        TVApp(id: "kids", name: "Kids", symbol: "teddybear"),
-        TVApp(id: "photos", name: "Photos", symbol: "photo.on.rectangle"),
-        TVApp(id: "live", name: "Live TV", symbol: "antenna.radiowaves.left.and.right"),
+        TVApp(id: "movies", name: "Movies", symbol: "film", paletteIndex: 0),
+        TVApp(id: "series", name: "Series", symbol: "play.tv", paletteIndex: 4),
+        TVApp(id: "music", name: "Music", symbol: "music.note", paletteIndex: 1),
+        TVApp(id: "sports", name: "Sports", symbol: "sportscourt", paletteIndex: 3),
+        TVApp(id: "news", name: "News", symbol: "newspaper", paletteIndex: 5),
+        TVApp(id: "kids", name: "Kids", symbol: "teddybear", paletteIndex: 6),
+        TVApp(id: "photos", name: "Photos", symbol: "photo.on.rectangle", paletteIndex: 2),
+        TVApp(id: "live", name: "Live TV", symbol: "antenna.radiowaves.left.and.right", paletteIndex: 7),
     ]
 
     var isOn = true
@@ -121,7 +121,7 @@ final class DemoTV {
         show("Channel \(digits)")
         digitTask?.cancel()
         digitTask = Task { [weak self] in
-            try? await Task.sleep(for: .seconds(1.2))
+            try? await Task.sleep(for: .seconds(2))
             guard !Task.isCancelled, let self, let value = Int(self.digits) else { return }
             self.channel = max(value, 1)
             self.digits = ""
@@ -132,10 +132,14 @@ final class DemoTV {
 
 @MainActor
 final class DemoController: TVController {
-    let device = TVDevice.demo
+    let device: TVDevice
     var supportsNumberPad: Bool { true }
 
     private let tv = DemoTV.shared
+
+    init(device: TVDevice = .demo) {
+        self.device = device
+    }
 
     func connect() async throws {
         try await Task.sleep(for: .milliseconds(350))

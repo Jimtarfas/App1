@@ -132,6 +132,11 @@ final class SubscriptionStore {
     }
 
     #if DEBUG
+    /// Lets the demo-video walkthrough show Premium features without a sandbox purchase.
+    func debugSetPremium(_ value: Bool) {
+        isPremium = value
+    }
+
     /// Shown only in debug builds launched with `-demoPrices YES`, where StoreKit has no products.
     private static let previewPlans = [
         Plan(id: yearlyID, title: "Yearly", price: "$29.99", period: "year", trialDays: 3, product: nil),

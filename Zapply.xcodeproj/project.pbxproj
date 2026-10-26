@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		03F92A835573A5E9A82A5A87 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B9A0F03E62679E064CEFDA /* AppRouter.swift */; };
 		07E2D3F9C8A7713C835F4CFE /* NetworkScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E490ED79F65A1A626854D47 /* NetworkScanner.swift */; };
+		0AC0A34F73846CF8AB205355 /* DemoAutoplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C43AC5710987820AD6A8A48 /* DemoAutoplay.swift */; };
 		0C49FD7EFDAFE96293B0EF99 /* TVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C7F9A38C859137605597AB /* TVController.swift */; };
 		1AAF27F56685A27D707254F4 /* SubscriptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD50497D86355E12143FA76 /* SubscriptionStore.swift */; };
 		1C0D9F2A2B327F6F2A70F426 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CCD47058A7E4A4F3A7DFD6 /* PaywallView.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C43AC5710987820AD6A8A48 /* DemoAutoplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAutoplay.swift; sourceTree = "<group>"; };
 		0F8F56C7C8DDA0E9875400A2 /* ZapplyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZapplyApp.swift; sourceTree = "<group>"; };
 		13CCD47058A7E4A4F3A7DFD6 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		315A52082BD5CB8C12559862 /* RemoteControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteControls.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				32B9A0F03E62679E064CEFDA /* AppRouter.swift */,
+				0C43AC5710987820AD6A8A48 /* DemoAutoplay.swift */,
 				7F257227E4E8B9C636281A5F /* Theme.swift */,
 				0F8F56C7C8DDA0E9875400A2 /* ZapplyApp.swift */,
 			);
@@ -222,6 +225,7 @@
 			files = (
 				03F92A835573A5E9A82A5A87 /* AppRouter.swift in Sources */,
 				A3F2A17776F287A0B508DE8D /* AppsView.swift in Sources */,
+				0AC0A34F73846CF8AB205355 /* DemoAutoplay.swift in Sources */,
 				203107F7A7917DC6715B19CB /* DemoTV.swift in Sources */,
 				927206EC44FA077E92FACEDD /* DevicesView.swift in Sources */,
 				623BDFFE028FEBA9692D8CA8 /* LGController.swift in Sources */,
@@ -281,7 +285,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = ZUCC9R4PP4;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -363,7 +367,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = ZUCC9R4PP4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

@@ -7,3 +7,4 @@ build/
 *.xcarchive
 marketing/screenshots/raw/
 marketing/video/*.mov
+marketing/video/*.mp4

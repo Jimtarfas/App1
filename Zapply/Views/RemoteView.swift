@@ -4,10 +4,8 @@ struct RemoteView: View {
     @Environment(TVManager.self) private var tvs
     @Environment(SubscriptionStore.self) private var store
     @Environment(AppRouter.self) private var router
-    @State private var showKeyboard = false
-    @State private var showNumberPad = false
-
     var body: some View {
+        @Bindable var router = router
         ScrollView {
             VStack(spacing: 16) {
                 header
@@ -30,11 +28,11 @@ struct RemoteView: View {
                     Grid(horizontalSpacing: 16, verticalSpacing: 16) {
                         GridRow {
                             key(.mute, "speaker.slash.fill", label: "Mute", size: 56)
-                            premiumKey("keyboard", label: "Keyboard", feature: .keyboard) { showKeyboard = true }
+                            premiumKey("keyboard", label: "Keyboard", feature: .keyboard) { router.remoteSheet = .keyboard }
                         }
                         GridRow {
                             key(.info, "info.circle", label: "Info", size: 56)
-                            premiumKey("textformat.123", label: "Number pad", feature: .channels) { showNumberPad = true }
+                            premiumKey("textformat.123", label: "Number pad", feature: .channels) { router.remoteSheet = .numberPad }
                         }
                     }
                     Spacer()
@@ -54,8 +52,12 @@ struct RemoteView: View {
         }
         .scrollBounceBehavior(.basedOnSize)
         .background(Theme.background.ignoresSafeArea())
-        .sheet(isPresented: $showKeyboard) { KeyboardSheet() }
-        .sheet(isPresented: $showNumberPad) { NumberPadSheet() }
+        .sheet(item: $router.remoteSheet) { sheet in
+            switch sheet {
+            case .keyboard: KeyboardSheet()
+            case .numberPad: NumberPadSheet()
+            }
+        }
     }
 
     private var header: some View {
